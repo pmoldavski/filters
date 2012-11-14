@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
+  
+  before_filter :censorship, :only => [:create]
+  
   def create
-    @article = Article.find(params[:article_id])
-    @comment = @article.comments.build(params[:comment])
 
     respond_to do |format|
       if @comment.save
@@ -27,4 +28,13 @@ class CommentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+  
+  def censorship
+    @article = Article.find(params[:article_id])
+    @comment = @article.comments.build(params[:comment])
+    @comment.body.gsub!(/sad/, "happy")
+  end
+  
 end
