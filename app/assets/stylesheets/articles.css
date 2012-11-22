@@ -1,0 +1,17 @@
+.comment {
+  color: #969696;
+}
+
+#new_comment {
+  margin-top: 25px;
+  border-top: #BFBFBF 1px solid;
+  padding-top: 15px;
+}
+
+.danger {
+	color: #FF0916;
+	font-weight: bold;
+}
+
+// specificity takes precedence
+// 1 id once per page, class multiple times is OK
