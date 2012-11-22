@@ -11,11 +11,13 @@
 
 <hr>
 <div class="row">
-  <div class="comments span8">
+  <div class="span8" id="comments">
     <h4>Comments</h4>
 
     <%= render @article.comments %>
 
+  </div>
+  <div class="span8">
     <%= render 'comments/form' %>
   </div>
 </div>
